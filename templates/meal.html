@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="form2">
+    <form method="POST" action='meal'>
+        {% csrf_token %}
+        {{ formset.management_form}}
+
+        {% for form in formset %}
+        {{ form }}
+        <hr>
+        {% endfor %}
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
